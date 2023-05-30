@@ -50,51 +50,35 @@
                             @endforeach
                         </ul>
                     </div>
-                    {{-- <!-- pro-details-short-info -->
+                    <!-- pro-details-short-info -->
                     <div class="pro-details-short-info mb-60">
                         <div class="row">
                             <div class="col-sm-6 col-xs-12">
                                 <div class="pro-details-condition">
-                                    <h5>Condition</h5>
+                                    <h5>Location</h5>
                                     <div class="pro-details-condition-inner bg-gray">
-                                        <ul class="condition-list">
-                                            <li><img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">Area 450 sqft</li>
-                                            <li><img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">Bedroom 5</li>
-                                            <li><img src="{{ asset("/assets_front/images/icons/7.png") }}" alt="">Bathroom 3</li>
-                                            <li><img src="{{ asset("/assets_front/images/icons/13.png") }}" alt="">Garage 2</li>
-                                            <li><img src="{{ asset("/assets_front/images/icons/14.png") }}" alt="">Kitchen 2</li>
-                                            <li>$52,350</li>
-                                        </ul>
-                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">568 E 1st Ave, Ney
-                                            Jersey, USA</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xs-12">
-                                <div class="pro-details-amenities">
-                                    <h5>Amenities</h5>
-                                    <div class="pro-details-amenities-inner bg-gray">
-                                        <ul class="amenities-list">
-                                            <li>Air Conditioning</li>
-                                            <li>Bedding</li>
-                                            <li>Balcony</li>
-                                            <li>Cable TV</li>
-                                            <li>Internet</li>
-                                            <li>Parking</li>
-                                            <li>Lift</li>
-                                            <li>Pool</li>
-                                            <li>Dishwasher</li>
-                                            <li>Toaster</li>
-                                        </ul>
+                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">{{ $propertie->location }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                    <!-- pro-details-description -->
-                    <div class="pro-details-description mb-50">
-                        {{$propertie->description}}
                     </div>
+                    <div class="pro-details-short-info mb-60">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="pro-details-condition">
+                                    <h5>Description</h5>
+                                    <div class="pro-details-condition-inner bg-gray">
+                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">{{$propertie->description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pro-details-description -->
+                    {{-- <div class="pro-details-description mb-50">
+                        {{$propertie->description}}
+                    </div> --}}
                     <!-- pro-details-feedback -->
                     {{-- <div class="pro-details-feedback mb-40">
                         <h5>3 Feedback</h5>
