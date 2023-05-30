@@ -46,36 +46,17 @@
                         <h6 class="footer-titel">LATEST PROPERTIES
                         </h6>
                         <ul class="footer-latest-news">
-                            <li>
-                                <div class="latest-news-image">
-                                    <a href="{{ url("single-blog.html") }}"><img src="{{ asset("/assets_front/images/blog/1.jpg") }}" alt=""></a>
-                                </div>
-                                <div class="latest-news-info">
-                                    <h6><a href="{{ url("single-blog.html") }}">Beautiful Home</a></h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor
-                                        inciidunt ut labore </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="latest-news-image">
-                                    <a href="{{ url("single-blog.html") }}"><img src="{{ asset("/assets_front/images/blog/2.jpg") }}" alt=""></a>
-                                </div>
-                                <div class="latest-news-info">
-                                    <h6><a href="{{ url("single-blog.html") }}">Beautiful Home</a></h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor
-                                        inciidunt ut labore </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="latest-news-image">
-                                    <a href="{{ url("single-blog.html") }}"><img src="{{ asset("/assets_front/images/blog/3.jpg") }}" alt=""></a>
-                                </div>
-                                <div class="latest-news-info">
-                                    <h6><a href="{{ url("single-blog.html") }}">Beautiful Home</a></h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor
-                                        inciidunt ut labore </p>
-                                </div>
-                            </li>
+                            @foreach ($latesthree as $item)
+                                <li>
+                                    <div class="latest-news-image">
+                                        <a href="{{ route('front.properties.details', $item->id) }}"><img src="{{ asset("uploads/books/images/" . $item->image[0]) }}" alt=""></a>
+                                    </div>
+                                    <div class="latest-news-info">
+                                        <h6><a href="{{ url("single-blog.html") }}">{{ $item->name }}</a></h6>
+                                        <p>{{ $item->description }}</p>
+                                    </div>
+                                </li> 
+                            @endforeach
                         </ul>
                     </div>
                 </div>

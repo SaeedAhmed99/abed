@@ -69,7 +69,7 @@
                                 <div class="pro-details-condition">
                                     <h5>Description</h5>
                                     <div class="pro-details-condition-inner bg-gray">
-                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">{{$propertie->description}}</p>
+                                        <p><img src="" alt="">{{$propertie->description}}</p>
                                     </div>
                                 </div>
                             </div>

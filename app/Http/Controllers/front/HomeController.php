@@ -22,7 +22,8 @@ class HomeController extends Controller
     public function index()
     {
         $properties = Book::orderBy('id', 'DESC')->take(6)->get();
-        return view('front.index', compact('properties'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.index', compact('properties', 'latesthree'));
     }
 
     public function services()
@@ -33,13 +34,15 @@ class HomeController extends Controller
             $settings = Setting::create();
         }
         $pagesslider = AboutUsSlider::first();
-        return view('front.services', compact('books', 'settings', 'pagesslider'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.services', compact('books', 'settings', 'pagesslider', 'latesthree'));
     }
 
     public function properties()
     {
         $properties = Book::orderBy('id', 'DESC')->get();
-        return view('front.properties', compact('properties'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.properties', compact('properties', 'latesthree'));
     }
 
     public function propertiesDetails($id)
@@ -65,7 +68,8 @@ class HomeController extends Controller
             $settings = Setting::create();
         }
         $pagesslider = AboutUsSlider::first();
-        return view('front.books', compact('books', 'settings', 'pagesslider'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.books', compact('books', 'settings', 'pagesslider', 'latesthree'));
     }
 
     public function about()
@@ -79,7 +83,8 @@ class HomeController extends Controller
             $settings = Setting::create();
         }
         $pagesslider = AboutUsSlider::first();
-        return view('front.about', compact('about_us', 'settings', 'pagesslider'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.about', compact('about_us', 'settings', 'pagesslider', 'latesthree'));
     }
 
     public function contact()
@@ -89,13 +94,15 @@ class HomeController extends Controller
             $settings = Setting::create();
         }
         $pagesslider = AboutUsSlider::first();
-        return view('front.contact', compact('settings', 'pagesslider'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.contact', compact('settings', 'pagesslider', 'latesthree'));
     }
 
     public function forLease()
     {
         $forleases = ForLase::orderBy('id', 'DESC')->get();
-        return view('front.forlease', compact('forleases'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.forlease', compact('forleases', 'latesthree'));
     }
 
     public function tearmsOfUse()
