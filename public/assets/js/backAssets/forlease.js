@@ -25,7 +25,7 @@ $(document).on('submit', '#add_book', function (e) {
             //     $('#alert_partner').empty()
             // }, 8000);
 
-            window.location.href = "/backend/properties/";
+            window.location.href = "/backend/for-leases/";
         }
         , error: function (data) {
             $('#alert_model').empty();

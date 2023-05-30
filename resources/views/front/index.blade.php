@@ -219,263 +219,28 @@
             </div>
             <div class="featured-flat">
                 <div class="row">
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale">For Sale</span>
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/1.png") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
+                    @foreach ($properties as $item)
+                          <!-- flat-item -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="flat-item">
+                                <div class="flat-item-image">
+                                    <span class="for-sale">For Sale</span>
+                                    <a href=""><img src="{{ asset("uploads/books/images/" . $item->image[0]) }}" alt=""></a>
+                                    <div class="flat-link">
+                                        <a href="{{ route('front.properties.details', $item->id) }}">More Details</a>
+                                    </div>
+                                
                                 </div>
-                              
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">Goderich Walmart Center </a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
+                                <div class="flat-item-info">
+                                    <div class="flat-title-price">
+                                        <h5><a href="{{ url("properties-details.html") }}">{{ $item->name }} </a></h5>
+                                        <!-- <span class="price">$52,350</span> -->
+                                    </div>
+                                    <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">{{ $item->location }}</</p>
                                 </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">263 Huron Rd, Goderich, Ontario</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/2.png") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
-                                </div>
-                            
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">111 Charles St. E </a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
-                                </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">Ingersoll, Ontario, N5C 1J9 Canada</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale rent">For rent</span>
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/3.png") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
-                                </div>
-                               
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">395 Clarke Rd</a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
-                                </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">London, Ontario, N5W 5G5 Canada</p>
-                            </div>
-                        </div>
-                    </div>
-                   
-                 <!-- flat-item -->
-                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="flat-item">
-                        <div class="flat-item-image">
-                            <span class="for-sale">For Sale</span>
-                            <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/1.jpg") }}" alt=""></a>
-                            <div class="flat-link">
-                                <a href="{{ url("properties-details.html") }}">More Details</a>
-                            </div>
-                            <ul class="flat-desc">
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                    <span>450 sqft</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                    <span>5</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                    <span>3</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="flat-item-info">
-                            <div class="flat-title-price">
-                                <h5><a href="{{ url("properties-details.html") }}">Goderich Walmart Center </a></h5>
-                                <!-- <span class="price">$52,350</span> -->
-                            </div>
-                            <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">263 Huron Rd, Goderich, Ontario</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- flat-item -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="flat-item">
-                        <div class="flat-item-image">
-                            <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/2.jpg") }}" alt=""></a>
-                            <div class="flat-link">
-                                <a href="{{ url("properties-details.html") }}">More Details</a>
-                            </div>
-                            <ul class="flat-desc">
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                    <span>450 sqft</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                    <span>5</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                    <span>3</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="flat-item-info">
-                            <div class="flat-title-price">
-                                <h5><a href="{{ url("properties-details.html") }}">111 Charles St. E </a></h5>
-                                <!-- <span class="price">$52,350</span> -->
-                            </div>
-                            <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">Ingersoll, Ontario, N5C 1J9 Canada</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- flat-item -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="flat-item">
-                        <div class="flat-item-image">
-                            <span class="for-sale rent">For rent</span>
-                            <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/3.jpg") }}" alt=""></a>
-                            <div class="flat-link">
-                                <a href="{{ url("properties-details.html") }}">More Details</a>
-                            </div>
-                            <ul class="flat-desc">
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                    <span>450 sqft</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                    <span>5</span>
-                                </li>
-                                <li>
-                                    <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                    <span>3</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="flat-item-info">
-                            <div class="flat-title-price">
-                                <h5><a href="{{ url("properties-details.html") }}">395 Clarke Rd</a></h5>
-                                <!-- <span class="price">$52,350</span> -->
-                            </div>
-                            <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">London, Ontario, N5W 5G5 Canada</p>
-                        </div>
-                    </div>
-                </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale">For Sale</span>
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/1.jpg") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">Goderich Walmart Center </a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
-                                </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">263 Huron Rd, Goderich, Ontario</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/2.jpg") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">111 Charles St. E </a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
-                                </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">Ingersoll, Ontario, N5C 1J9 Canada</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- flat-item -->
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="flat-item">
-                            <div class="flat-item-image">
-                                <span class="for-sale rent">For rent</span>
-                                <a href="{{ url("properties-details.html") }}"><img src="{{ asset("/assets_front/images/flat/3.jpg") }}" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="{{ url("properties-details.html") }}">More Details</a>
-                                </div>
-                                <ul class="flat-desc">
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                        <span>3</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flat-item-info">
-                                <div class="flat-title-price">
-                                    <h5><a href="{{ url("properties-details.html") }}">395 Clarke Rd</a></h5>
-                                    <!-- <span class="price">$52,350</span> -->
-                                </div>
-                                <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">London, Ontario, N5W 5G5 Canada</p>
-                            </div>
-                        </div>
-                    </div>
-                   
+                    @endforeach
                 </div>
             </div>
         </div>

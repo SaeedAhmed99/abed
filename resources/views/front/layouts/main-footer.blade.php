@@ -43,7 +43,8 @@
                 <!-- footer-latest-news -->
                 <div class="col-xl-6 col-lg-5 col-12 order-3 order-lg-2 mt-md-30">
                     <div class="footer-widget middle">
-                        <h6 class="footer-titel">LATEST NEWS</h6>
+                        <h6 class="footer-titel">LATEST PROPERTIES
+                        </h6>
                         <ul class="footer-latest-news">
                             <li>
                                 <div class="latest-news-image">

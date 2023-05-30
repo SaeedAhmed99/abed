@@ -33,38 +33,21 @@
                     <div class="pro-details-image mb-60">
                         <div class="pro-details-big-image">
                             <div class="tab-content" id="pills-tabContent">
-                                @foreach ($propertie->image as $img)
                                     <div class="tab-pane fade show active" id="pro-1" role="tabpanel" aria-labelledby="pro-1-tab">
                                         <a href="{{ url("images/single-property/big/1.jpg") }}" data-lightbox="image-1" data-title="Sheltek Properties - 1">
-                                            <img src="{{ asset("uploads/books/images/" . $img) }}" alt="">
+                                            <img src="{{ asset("uploads/books/images/" . $propertie->image[0]) }}" alt="">
                                         </a>
                                     </div>
-                                @endforeach
-
-
-                                @foreach ($propertie->image as $img)
-                                <div class="tab-pane fade" id="pro-2" role="tabpanel" aria-labelledby="pro-2-tab">
-                                    <a href="{{ url("images/single-property/big/2.jpg") }}" data-lightbox="image-1" data-title="Sheltek Properties - 2">
-                                        <img src="{{ asset("uploads/books/images/" . $img) }}" alt="">
-                                    </a>
-                                </div>
-                                @endforeach
 
                             </div>
                         </div>
+
                         <ul class="nav nav-pills pro-details-navs" id="pills-tab" role="tablist">
+                            @foreach ($propertie->image as $img)
                             <li class="nav-item">
-                                <a class="nav-link active" id="pro-1-tab" data-toggle="pill" href="{{ url("#pro-1") }}" role="tab" aria-controls="pro-1" aria-selected="true"><img src="{{ asset("/assets_front/images/single-property/small/1.jpg") }}" alt=""></a>
+                                <a class="nav-link active" id="pro-1-tab" data-toggle="pill" href="{{ url("#pro-1") }}" role="tab" aria-controls="pro-1" aria-selected="true"><img src="{{ asset("uploads/books/images/" . $img) }}" alt=""></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pro-2-tab" data-toggle="pill" href="{{ url("#pro-2") }}" role="tab" aria-controls="pro-2" aria-selected="false"><img src="{{ asset("/assets_front/images/single-property/small/2.jpg") }}" alt=""></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pro-3-tab" data-toggle="pill" href="{{ url("#pro-3") }}" role="tab" aria-controls="pro-3" aria-selected="false"><img src="{{ asset("/assets_front/images/single-property/small/3.jpg") }}" alt=""></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pro-4-tab" data-toggle="pill" href="{{ url("#pro-4") }}" role="tab" aria-controls="pro-4" aria-selected="false"><img src="{{ asset("/assets_front/images/single-property/small/4.jpg") }}" alt=""></a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     {{-- <!-- pro-details-short-info -->
@@ -313,14 +296,15 @@
                     <aside class="widget widget-featured-property mb-30">
                         <h5>Featured Property</h5>
                         <div class="row">
-                            <!-- flat-item -->
+                            @foreach ($latesthree as $item)
+                                <!-- flat-item -->
                             <div class="col-lg-12 col-md-6 col-12">
                                 <div class="flat-item">
                                     <div class="flat-item-image">
                                         <span class="for-sale">For Sale</span>
-                                        <a href="{{ url("#") }}"><img src="{{ asset("/assets_front/images/flat/1.jpg") }}" alt=""></a>
+                                        <a href="{{ url("#") }}"><img src="{{ asset("uploads/books/images/" . $item->image[0]) }}" alt=""></a>
                                         <div class="flat-link">
-                                            <a href="{{ url("#") }}">More Details</a>
+                                            <a href="{{ route('front.properties.details', $item->id) }}">More Details</a>
                                         </div>
                                         <ul class="flat-desc">
                                             <li>
@@ -339,82 +323,15 @@
                                     </div>
                                     <div class="flat-item-info">
                                         <div class="flat-title-price">
-                                            <h5><a href="{{ url("#") }}">Masons de Villa </a></h5>
-                                            <span class="price">$52,350</span>
+                                            <h5><a href="{{ url("#") }}">{{ $item->name }}</a></h5>
+                                            <span class="price">{{ $item->price }}</span>
                                         </div>
-                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">568 E 1st Ave, Ney Jersey
+                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">{{$item->location}}
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- flat-item -->
-                            <div class="col-lg-12 col-md-6 col-12">
-                                <div class="flat-item">
-                                    <div class="flat-item-image">
-                                        <span class="for-sale">For Sale</span>
-                                        <a href="{{ url("#") }}"><img src="{{ asset("/assets_front/images/flat/2.jpg") }}" alt=""></a>
-                                        <div class="flat-link">
-                                            <a href="{{ url("#") }}">More Details</a>
-                                        </div>
-                                        <ul class="flat-desc">
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                                <span>450 sqft</span>
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                                <span>5</span>
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                                <span>3</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="flat-item-info">
-                                        <div class="flat-title-price">
-                                            <h5><a href="{{ url("#") }}">Masons de Villa </a></h5>
-                                            <span class="price">$52,350</span>
-                                        </div>
-                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">568 E 1st Ave, Ney Jersey
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- flat-item -->
-                            <div class="col-lg-12 d-none d-lg-block">
-                                <div class="flat-item">
-                                    <div class="flat-item-image">
-                                        <span class="for-sale">For Sale</span>
-                                        <a href="{{ url("#") }}"><img src="{{ asset("/assets_front/images/flat/3.jpg") }}" alt=""></a>
-                                        <div class="flat-link">
-                                            <a href="{{ url("#") }}">More Details</a>
-                                        </div>
-                                        <ul class="flat-desc">
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/4.png") }}" alt="">
-                                                <span>450 sqft</span>
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/5.png") }}" alt="">
-                                                <span>5</span>
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset("/assets_front/images/icons/6.png") }}" alt="">
-                                                <span>3</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="flat-item-info">
-                                        <div class="flat-title-price">
-                                            <h5><a href="{{ url("#") }}">Masons de Villa </a></h5>
-                                            <span class="price">$52,350</span>
-                                        </div>
-                                        <p><img src="{{ asset("/assets_front/images/icons/location.png") }}" alt="">568 E 1st Ave, Ney Jersey
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </aside>
                     <!-- widget-video -->

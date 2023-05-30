@@ -21,18 +21,8 @@ class HomeController extends Controller
     use LogsTrait;
     public function index()
     {
-        $about_us = AboutUs::first();
-        $books = Book::orderBy('id', 'DESC')->take(3)->get();
-        if (!$about_us) {
-            $about_us = AboutUs::create();
-        }
-        $settings = Setting::select('name')->first();
-        if (!$settings) {
-            $settings = Setting::create();
-        }
-        $sliders = HomeSlider::orderBy('id', 'DESC')->take(3)->get();
-        $pagesslider = AboutUsSlider::first();
-        return view('front.index', compact('about_us', 'books', 'settings', 'sliders', 'pagesslider'));
+        $properties = Book::orderBy('id', 'DESC')->take(6)->get();
+        return view('front.index', compact('properties'));
     }
 
     public function services()
@@ -55,13 +45,16 @@ class HomeController extends Controller
     public function propertiesDetails($id)
     {
         $propertie = Book::findOrFail($id);
-        return view('front.propertiesDetails', compact('propertie'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+        return view('front.propertiesDetails', compact('propertie', 'latesthree'));
     }
 
     public function forLeaseDetails($id)
     {
         $propertie = ForLase::findOrFail($id);
-        return view('front.forleaseDetails', compact('propertie'));
+        $latesthree = Book::orderBy('id', 'DESC')->take(3)->get();
+
+        return view('front.forleaseDetails', compact('latesthree', 'propertie'));
     }
 
     public function books()
